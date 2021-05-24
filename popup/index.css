@@ -1,21 +1,12 @@
-body{
-    width: 250px;
-}
-.flex{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.flex > * {
-    margin: 5px;
+#image{
+    height: 200px;
+    padding: 25px;
+    margin: 0 auto;
+    display: block;
 }
 
-.title{
-    font-size: large;
-    padding: 5px;
-    width: 100%;
-}
-
-textarea{
-    width: 100%;
+#btn{
+    position: absolute;
+    bottom: 5px;
+    right: 25px;
 }
