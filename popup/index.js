@@ -1,4 +1,5 @@
 const getRandomImage = () => {
+    setLoading();
     const xhttp = new XMLHttpRequest();
     xhttp.open("GET", "https://api.giphy.com/v1/gifs/random?api_key=oWskRqAliCwuyzc6QAJPOBcf9Xxxa2K0&rating=g", true);
     xhttp.onreadystatechange = function() {
@@ -11,7 +12,18 @@ const getRandomImage = () => {
     xhttp.send();
 }
 
-setInterval(() => getRandomImage(), 5000);
-getRandomImage();
+const setLoading = () => {
+    document.querySelector('#image').src = chrome.extension.getURL('assets/loading.gif')
+}
 
-window.addEventListener("load", () => document.querySelector("#btn").addEventListener("click", getRandomImage))
+const throwError = () => {
+   undefinedFunction(100)
+}
+
+// setInterval(() => getRandomImage(), 5000);
+
+window.addEventListener("load", () => {
+    getRandomImage();
+    document.querySelector("#btn").addEventListener("click", getRandomImage)
+    document.querySelector("#err-btn").addEventListener("click", throwError)
+})
